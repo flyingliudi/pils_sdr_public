@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /home/dil/myprojects/pils_sdr/test/tmp.log
+  log type:  text
+ opened on:  18 Feb 2026, 16:54:12
+
+. 
+. 
+. dgp_two_sample,                 ///
+>         nobs_main(2000)         ///
+>         nobs_aux(1000)          ///
+>         d3_fv(4)                ///
+>         x3vars(x3_c1 x3_fv1)    ///
+>         d2(2)                   ///
+>         dta_main(sample_main)   ///
+>         dta_aux(sample_aux)
+Number of observations (_N) was 0, now 2,000.
+Number of observations (_N) was 0, now 1,000.
+file sample_main.dta saved
+file sample_aux.dta saved
+
+. 
+. use sample_main
+
+. 
+. pils y x1_* (x2_c* i.(x2_fv*)= x3_c1 i.x3_fv1)          ///
+>         using sample_aux                                ///
+>         , extram(x3_c* i.(x3_fv*))                      ///
+>         sdrc(sir)                                       ///
+>         sdrfv(logit)
+
+Two sample regression with SDR        Number of obs in sample 1   =      2,000
+                                      Number of obs in sample 2   =      1,000
+Binary SDR:     Logit                 Number of matched vars.     =          2
+Continuous SDR: SIR                   Number of overlapping vars. =         10
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        x1_1 |   .9996793   .0459042    21.78   0.000     .9097087     1.08965
+       x2_c1 |   .9919557   .0775808    12.79   0.000     .8399002    1.144011
+    1.x2_fv1 |   .7161869   .2411767     2.97   0.003     .2434892    1.188885
+       x3_c1 |   1.159338   .0992397    11.68   0.000     .9648314    1.353844
+    1.x3_fv1 |    .877538   .1658245     5.29   0.000     .5525279    1.202548
+       _cons |   1.239854    .176406     7.03   0.000     .8941041    1.585603
+------------------------------------------------------------------------------
+
+. 
+. 
+. log close
+      name:  <unnamed>
+       log:  /home/dil/myprojects/pils_sdr/test/tmp.log
+  log type:  text
+ closed on:  18 Feb 2026, 16:54:15
+-------------------------------------------------------------------------------
