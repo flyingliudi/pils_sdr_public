@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  /home/dil/myprojects/pils_sdr/test/tmp.log
+       log:  /Users/diliu/Research/pils_sdr_public/test/tmp.log
   log type:  text
- opened on:  18 Feb 2026, 16:54:12
+ opened on:  10 Nov 2026, 11:33:39
 
 . 
 . 
@@ -23,7 +23,7 @@ file sample_aux.dta saved
 . use sample_main
 
 . 
-. pils y x1_* (x2_c* i.(x2_fv*)= x3_c1 i.x3_fv1)          ///
+. pilssdr y x1_* (x2_c* i.(x2_fv*)= x3_c1 i.x3_fv1)               ///
 >         using sample_aux                                ///
 >         , extram(x3_c* i.(x3_fv*))                      ///
 >         sdrc(sir)                                       ///
@@ -49,7 +49,7 @@ Continuous SDR: SIR                   Number of overlapping vars. =         10
 . 
 . log close
       name:  <unnamed>
-       log:  /home/dil/myprojects/pils_sdr/test/tmp.log
+       log:  /Users/diliu/Research/pils_sdr_public/test/tmp.log
   log type:  text
- closed on:  18 Feb 2026, 16:54:15
+ closed on:  10 Nov 2026, 11:33:41
 -------------------------------------------------------------------------------

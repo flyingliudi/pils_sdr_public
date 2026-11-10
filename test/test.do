@@ -22,7 +22,7 @@ dgp_two_sample, 		///
 
 use sample_main
 
-pils y x1_* (x2_c* i.(x2_fv*)= x3_c1 i.x3_fv1) 		///
+pilssdr y x1_* (x2_c* i.(x2_fv*)= x3_c1 i.x3_fv1) 		///
  	using sample_aux 				///
  	, extram(x3_c* i.(x3_fv*)) 			///
  	sdrc(sir) 					///

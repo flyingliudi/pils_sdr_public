@@ -22,7 +22,7 @@ local opts extram(x3_c* i.(x3_fv*))
 
 foreach sdrc in sir pls pir {
 	foreach sdrfv in sir logit probit{
-		pils `spec', 		///
+		pilssdr `spec', 	///
 			`opts'		///
 			sdrc(`sdrc') 	///
 			sdrfv(`sdrfv')

@@ -190,6 +190,7 @@ void `PILS'::set_data()
 
 	// demean x3 in auxiliary sample
 	_aux_x3_bar = mean(_aux_x3)
+
 	_aux_x3 = _aux_x3 :- _aux_x3_bar
 	st_store(., idx_x3_demean, _touse2, _aux_x3)
 
